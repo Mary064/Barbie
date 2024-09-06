@@ -1,0 +1,28 @@
+// Reset Styles
+@use "./_reset";
+
+// Variables
+@use "./_variables" as var;
+
+// Global Styles
+@use "./_base" as ba;
+
+// Fonts
+@use "./_fonts" as ft;
+
+// Mixins
+@use "./_mixins" as mix;
+
+// Extends
+@use "./_extends" as ext;
+
+// Components
+
+// header
+@use "./components/_header";
+
+// slider
+@use "./components/_slider";
+
+// main
+@use "./components/_main";

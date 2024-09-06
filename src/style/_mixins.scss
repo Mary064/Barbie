@@ -1,0 +1,20 @@
+@use "./variables" as var;
+
+@mixin typography-main($size: var.$main-fontsize, $color: var.$main-textcolor, $weight: var.$main-fontweight) {
+    font-family: var.$circular;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: calc(1.5 * #{$size});
+    letter-spacing: -5%;
+    color: $color;
+}
+
+@mixin typography-paragraph($size: var.$main-fontsize, $color: var.$main-textcolor) {
+    font-family: var.$circular;
+    font-size: $size;
+    letter-spacing: -5%;
+    font-weight: 900;
+    line-height: calc(1.5 * #{$size});
+    color: $color;
+}
+

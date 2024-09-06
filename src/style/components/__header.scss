@@ -1,0 +1,80 @@
+@use "../mixins" as mix;
+@use "../variables" as var;
+
+header {
+    width: 100%;
+    height: 85px;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(270deg, rgba(255, 90, 160, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.header_logo {
+    fill: var.$header-iconcolor;
+    &:hover {
+        fill: var.$sweet-green;
+    }
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+}
+.svg-icon {
+    fill: var.$header-iconcolor;
+    transition: all 0.3s ease-in-out;
+    margin: 5px;
+}
+
+.nav_list {
+    display: flex;
+    width: 733px;
+    justify-content: space-around;
+    &-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 80px;
+        .signup-button {
+            padding: 15px;
+            background-color: var.$sweet-green;
+            border-radius: 15px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+
+            a {
+                font-size: 15px;
+                color: black;
+                &:hover {
+                    color: black;
+                    transform: scale(1.1);
+
+                }
+            }
+        }
+        a {
+            display: flex;
+            align-items: center;
+            @include mix.typography-main($size: 14px, $color: var.$header-sweetpink);
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                color: var.$sweet-green;
+                .svg-icon {
+                    fill: var.$sweet-green;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    header {
+        display: flex;
+        justify-content: center;
+    }
+    nav {
+        display: none;
+    }
+}

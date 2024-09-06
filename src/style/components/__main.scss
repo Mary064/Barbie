@@ -1,0 +1,55 @@
+@use "../mixins" as mix;
+@use "../variables" as var;
+
+.main__all {
+    margin-top: 250px;
+    max-width: 700px;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.main__title-h2 {
+    @include mix.typography-main($size: 30px);
+    position: relative;
+    margin-left: 40px;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 36px;
+        height: 5px;
+        top: 50%;
+        bottom: 50%;
+        left: -3%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border-radius: 10px;
+    }
+}
+.main__title-h1 {
+    @include mix.typography-paragraph($size: 90px);
+}
+
+.main__about-paragraph {
+    @include mix.typography-main($size: 14px);
+}
+
+@media (max-width: 500px) {
+    .main__all {
+        margin: 0;
+    }
+    .main__title-h2 {
+        text-align: center;
+    }
+    .main__title-h1 {
+        text-align: center;
+    }
+    .main__about-paragraph {
+        font-size: 20px;
+        backdrop-filter: blur(10px);
+        background: linear-gradient(270deg, rgba(255, 90, 160, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+        border-radius: 10px;
+        margin: 20px;
+    }
+}
